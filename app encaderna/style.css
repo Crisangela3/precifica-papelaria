@@ -1,0 +1,168 @@
+:root {
+    --lavanda: #E6E6FA;
+    --verde: #B2D8D0;
+    --bege: #F5F5DC;
+    --roxo-texto: #9B86BD;
+    --marrom: #6d4c41;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #E8E8D0; /* Tom bege marmorizado */
+    background-image: radial-gradient(circle at 2px 2px, rgba(155, 134, 189, 0.05) 1px, transparent 0);
+    background-size: 30px 30px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: var(--bege);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--verde);
+    overflow: hidden;
+}
+
+/* Ajusta o espaçamento entre a logo/título e o primeiro campo */
+header {
+    background: white;
+    padding: 20px 20px 30px 20px; /* Aumentei o espaço inferior de 15px para 30px */
+    text-align: center;
+}
+
+/* Ou você pode adicionar margem diretamente no primeiro input de texto */
+#produtoNome {
+    margin-top: 20px; /* Cria o espaço exato que você quer entre o título e a caixa */
+}
+.calculadora { padding: 20px; }
+input { 
+    width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; 
+    border: 1px solid #ddd; box-sizing: border-box; font-size: 1rem;
+}
+
+.grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn-add { 
+    width: 100%; background: var(--verde); border: none; padding: 12px; 
+    border-radius: 8px; font-weight: bold; cursor: pointer; color: #4a7a70;
+}
+
+#listaProducao { list-style: none; padding: 0; margin: 15px 0; border-top: 1px solid var(--lavanda); }
+#listaProducao li { padding: 8px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; font-size: 0.9rem; }
+
+.input-row { display: flex; gap: 8px; margin-top: 15px; }
+.input-row label { font-size: 0.75rem; color: var(--marrom); font-weight: bold; }
+
+.resultado-box { 
+    background: white; padding: 15px; border-radius: 12px; 
+    border: 2px dashed var(--verde); text-align: center; margin-top: 15px;
+}
+#precoFinal { font-size: 1.8rem; color: var(--roxo-texto); font-weight: bold; }
+
+.acoes-extras { display: flex; gap: 10px; margin-top: 20px; }
+.btn-pdf { flex: 2; background: var(--roxo-texto); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-limpar { flex: 1; background: #ff7675; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+.gaveta-cliente { 
+    display: none; background: #fdfaf0; padding: 15px; border-radius: 12px; 
+    border: 2px solid var(--lavanda); margin-top: 15px; animation: slideIn 0.4s;
+}
+@keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+.btn-confirmar { width: 100%; background: var(--verde); border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.modal-content { background: var(--bege); margin: 15% auto; padding: 20px; width: 85%; border-radius: 15px; }
+.close { float: right; font-size: 25px; cursor: pointer; }
+
+:root {
+    --lavanda: #E6E6FA;
+    --verde: #B2D8D0;
+    --bege: #F5F5DC;
+    --roxo-texto: #9B86BD;
+    --marrom: #6d4c41;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #E8E8D0;
+    background-image: radial-gradient(circle at 2px 2px, rgba(155, 134, 189, 0.05) 1px, transparent 0);
+    background-size: 30px 30px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    background: var(--bege);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--verde);
+    overflow: hidden;
+}
+
+header { background: white; padding: 15px; text-align: center; }
+.logo { max-width: 130px; cursor: pointer; }
+h1 { color: var(--roxo-texto); font-size: 1.2rem; margin: 5px 0; }
+
+.calculadora { padding: 0 20px 20px; }
+input { 
+    width: 100%; padding: 10px; margin-bottom: 8px; border-radius: 6px; 
+    border: 1px solid #ddd; box-sizing: border-box; font-size: 0.95rem;
+}
+
+.grid-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.btn-add { 
+    width: 100%; background: var(--verde); border: none; padding: 10px; 
+    border-radius: 8px; font-weight: bold; cursor: pointer; color: #4a7a70; margin-bottom: 10px;
+}
+
+#listaProducao { list-style: none; padding: 0; margin: 10px 0; border-top: 1px solid var(--lavanda); }
+#listaProducao li { padding: 6px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; font-size: 0.85rem; }
+
+.input-row { display: flex; gap: 8px; margin-top: 10px; }
+.input-row label { font-size: 0.7rem; color: var(--marrom); font-weight: bold; }
+
+.resultado-box { 
+    background: white; padding: 15px; border-radius: 12px; 
+    border: 2px dashed var(--verde); text-align: center; margin-top: 10px;
+}
+#precoFinal { font-size: 1.6rem; color: var(--roxo-texto); font-weight: bold; }
+
+.acoes-extras { display: flex; gap: 10px; margin-top: 15px; }
+.btn-pdf { flex: 2; background: var(--roxo-texto); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-limpar { flex: 1; background: #ff7675; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
+
+/* Gaveta e Aviso */
+.gaveta-cliente { 
+    display: none; background: #fffcf0; padding: 15px; border-radius: 12px; 
+    border: 1px solid var(--lavanda); margin-top: 15px; animation: slideIn 0.3s;
+}
+
+.aviso-seguranca {
+    background: #f0f7f6;
+    border-left: 4px solid var(--verde);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.aviso-seguranca p {
+    font-size: 0.8rem;
+    color: var(--marrom);
+    margin: 0;
+    line-height: 1.4;
+}
+
+@keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+.btn-confirmar { width: 100%; background: var(--verde); border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; color: #4a7a70; }
+
+.modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.modal-content { background: var(--bege); margin: 15% auto; padding: 20px; width: 85%; border-radius: 15px; }
+.close { float: right; font-size: 25px; cursor: pointer; }

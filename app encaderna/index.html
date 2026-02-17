@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precifica Fácil Papelaria</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./img/npg logo.png" alt="Cria do Papel" class="logo" onclick="acessoSegredo()">
+            <h1>Precifica Fácil Papelaria</h1>
+        </header>
+
+        <section class="calculadora">
+            <input type="text" id="produtoNome" placeholder="O que você está produzindo? (Ex: Planner)">
+
+            <div class="sessao-materiais">
+                <h3>📦 Insumos e Materiais</h3>
+                <div class="grid-inputs">
+                    <input type="text" id="insumoNome" placeholder="Material">
+                    <input type="number" id="insumoPrecoTotal" placeholder="Preço Pago (R$)">
+                    <input type="number" id="insumoQtdTotal" placeholder="Qtd Comprada">
+                    <input type="number" id="insumoQtdUso" placeholder="Qtd Usada">
+                </div>
+                <button onclick="adicionarInsumo()" class="btn-add">Adicionar Material</button>
+            </div>
+
+            <ul id="listaProducao"></ul>
+
+            <div class="custos-finais">
+                <div class="input-row">
+                    <div>
+                        <label>Minutos</label>
+                        <input type="number" id="tempo" value="30">
+                    </div>
+                    <div>
+                        <label>Sua Hora (R$)</label>
+                        <input type="number" id="valorHora" value="20">
+                    </div>
+                    <div>
+                        <label>Lucro %</label>
+                        <input type="number" id="lucro" value="30">
+                    </div>
+                </div>
+            </div>
+
+            <div class="resultado-box">
+                <p>Custo Mat: <span id="custoMat">R$ 0,00</span></p>
+                <p>Preço Final: <span id="precoFinal">R$ 0,00</span></p>
+            </div>
+
+            <div class="acoes-extras">
+                <button onclick="mostrarFormulario()" id="btnAtivar" class="btn-pdf">📄 Salvar Orçamento / Gerar PDF</button>
+                <button onclick="limparTudo()" class="btn-limpar">Novo Cálculo</button>
+            </div>
+
+            <div id="gavetaCadastro" class="gaveta-cliente">
+                <div class="aviso-seguranca">
+                    <p>✨ <strong>Fique tranquilo(a)!</strong> Preencha os dados abaixo apenas para que possamos organizar e enviar o orçamento detalhado dos valores que você solicitou. Suas informações estão seguras conosco.</p>
+                </div>
+                
+                <input type="text" id="cliNome" placeholder="Seu Nome Completo">
+                <input type="tel" id="cliWhats" placeholder="Seu WhatsApp">
+                <input type="email" id="cliEmail" placeholder="Seu E-mail">
+                <input type="text" id="cliEnd" placeholder="Endereço de Entrega (Opcional)">
+                <button onclick="finalizarProcesso()" class="btn-confirmar">✅ Confirmar e Receber Orçamento</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="modalMala" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharMala()">&times;</span>
+            <h2>Mala Direta Privada</h2>
+            <div id="listaClientes"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
